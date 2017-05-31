@@ -1,33 +1,27 @@
-window.onload = function(){
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDiXW9MnTR5ME_brg38JUdUe808V6o0mL0",
-    authDomain: "medifofoweb.firebaseapp.com",
-    databaseURL: "https://medifofoweb.firebaseio.com",
-    projectId: "medifofoweb",
-    storageBucket: "medifofoweb.appspot.com",
-    messagingSenderId: "744363956828"
-  };
+$(document).ready(function(){
+  $("#registerButton").click(function(){
+    const txtName = document.getElementById('name');
+    const txtEmail = document.getElementById('email');
+    const txtPassword = document.getElementById('password');
 
-  firebase.initializeApp(config);
-};
-
-function registerDoctor(){
-  const txtEmail = document.getElementById('email');
-  const txtPassword = document.getElementById('password');
-  const buttonRegister = document.getElementById('registerButton');
-
-  buttonRegister.addEventListener('click', e => {
+    const name = txtName.value;
     const email = txtEmail.value;
     const password = txtPassword.value;
     const auth = firebase.auth();
 
+    if(name == null || name.length == 0){
+      alert('이름을 입력해주세요.');
+      txtName.focus();
+      return;
+    }
     if (email.length < 4) {
-      alert('Please enter an email address.');
+      alert('email을 입력해주세요.');
+      txtEmail.focus();
       return;
     }
     if (password.length < 8) {
-      alert('Please enter a password.');
+      alert('비밀번호를 입력해주세요.');
+      txtPassword.focus();
       return;
     }
 
@@ -36,16 +30,20 @@ function registerDoctor(){
     var errorCode = error.code;
     var errorMessage = error.message;
 
-    console.log(errorMessage);
-
-    firebase.auth().onAuthStateChanged(firebaseUser => {
+    auth.onAuthStateChanged(firebaseUser => {
       if(firebaseUser){
         console.log(firebaseUser);
+        goLoginPage();
       }else{
+        alert("ERROR: " + errorMessage);
         console.log('not logged in');
+        return;
       }
     });
-
     });
   });
-};
+});
+
+function goLoginPage(){
+  location.href = "./doctor_login.html";
+}
