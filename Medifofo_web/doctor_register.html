@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-
-		<!-- Website CSS style -->
-		<link rel="stylesheet" type="text/css" href="doctor_register.css">
 
 		<!-- Website Font style -->
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -13,10 +11,7 @@
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-
-		<title>회원가입</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="doctor_register.css">
 	</head>
 	<body>
@@ -25,25 +20,25 @@
         <div class="panel">
           <h1 class="text-center signup-title">Sign up to continue to Medifofo</h1>
           <div class="panel-body">
-            <form class="form-signup">
+            <form class="form-signup" action="doctor_login.html">
               <div class="form-group">
                 <label class="control-label" for="signupName">Your name</label>
-                <input id="signupName" type="text" maxlength="50" class="form-control">
+                <input id="signupName" type="text" maxlength="50" class="form-control" required>
               </div>
               <div class="form-group">
                 <label class="control-label" for="signupEmail">Email</label>
-                <input id="signupEmail" type="email" maxlength="50" class="form-control">
+                <input id="signupEmail" type="email" maxlength="50" class="form-control" required>
               </div>
               <div class="form-group">
                 <label class="control-label" for="signupPassword">Password</label>
-                <input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">
+                <input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40" required>
               </div>
               <div class="form-group">
                 <label class="control-label" for="signupPasswordagain">Password again</label>
-                <input id="signupPasswordagain" type="password" maxlength="25" class="form-control">
+                <input id="signupPasswordagain" type="password" maxlength="25" class="form-control" required>
               </div>
               <div class="form-group">
-                <button id="signupSubmit" type="submit" class="btn btn-lg btn-primary btn-block">회원가입하기</button>
+                <button onclick="registerDoctor()" id="registerButton" type="submit" class="btn btn-lg btn-primary btn-block">회원가입하기</button>
               </div>
               <hr>
               <p></p>Already have an account? <a href="doctor_login.html">Sign in</a></p>
@@ -52,9 +47,12 @@
         </div>
       </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="doctor_register.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 	</body>
 </html>
