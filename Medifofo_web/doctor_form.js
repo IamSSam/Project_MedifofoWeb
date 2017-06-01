@@ -15,17 +15,14 @@ $(function() {
       var user = firebase.auth().currentUser;
       var user_picture = "http://graph.facebook.com/" + user.providerData[0].uid +"/picture?type=large";
       document.getElementById('user-image').src = user_picture;
-      console.log(user_picture);
       //var user_picture = user.uid;
 
       if(user){
         // TODO: Move to Main page
-        //window.location = 'doctor_main.html';
+        window.location = './main/doctor_main.html';
       }else{
         location.href = '#';
       }
-
-
 
     }else{
       console.log('not logged in');
