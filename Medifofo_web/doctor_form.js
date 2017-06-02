@@ -14,6 +14,7 @@ $(function() {
 
       var user = firebase.auth().currentUser;
       var user_picture = "http://graph.facebook.com/" + user.providerData[0].uid +"/picture?type=large";
+
       document.getElementById('user-image').src = user_picture;
       //var user_picture = user.uid;
 
