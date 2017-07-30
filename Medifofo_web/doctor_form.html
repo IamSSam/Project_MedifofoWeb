@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>로그인</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Firebase init -->
-  <script src="https://www.gstatic.com/firebasejs/4.1.0/firebase.js"></script>
-  <script>
+    <title> 로그인 </title>
+    <!-- Firebase init -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.0/firebase.js"></script>
+    <script>
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyDiXW9MnTR5ME_brg38JUdUe808V6o0mL0",
@@ -20,115 +23,117 @@
     firebase.initializeApp(config);
   </script>
 
-  <!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="doctor_form.css">
-</head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
 
-<body>
-<div class="container">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">로그인</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">회원가입</a>
-							</div>
-						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" style="display: block;">
-                  <div class="account-wall">
-                    <img id="user-image" class="profile-img" src="./main/images/user.png" alt="">
-                  </div>
-									<div class="form-group">
-										<input type="text" id="user_email" tabindex="1" class="form-control" placeholder="이메일">
-									</div>
-									<div class="form-group">
-										<input type="password" id="user_password" tabindex="2" class="form-control" placeholder="비밀번호">
-									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-                        <input id="loginButton" type="button" class="btn btn-lg btn-default btn-block" value="로그인">
-											</div>
-										</div>
-									</div>
-								</form>
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
 
-                <div id="facebook-form" style="display: block;">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3">
-                        <button id="facebookButton" class="btn btn-lg btn-primary btn-block">
-                            페이스북으로 로그인하기
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1>
+          <section class="login_content">
+            <form>
+              <h1>로그인</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="이메일" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="비밀번호" required="" />
+              </div>
+              <div>
+               <!--  <a class="btn btn-default submit" href="index.html">Log in</a> -->
+                <div class="row">
+                  <div class="col-sm-6 col-xs-6">
+                        <input id="loginButton" type="button" class="btn btn-md btn-default btn-block" value="로그인">
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                        <button id="facebookButton" class="btn btn-md btn-primary btn-block">
+                            페이스북 로그인
                         </button>
-                      </div>
-                    </div>
+                        </div>
+                </div>
+              <div class="row text-center" style="margin-top: 15px">
+                <b><a class="reset_pass" style="margin-left: 40px" href="#">비밀번호 찾기</a></b>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link"> 처음 방문하셨습니까?
+                  <b><a href="#signup" class="to_register"> 회원가입 </a></b>
+                </p>
+
+                <div class="clearfix"></div>
+                <br/>
+
+                <div class="row">
+                  <!-- <h1 id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1> -->
+                  <p>©2017 <a style="margin-right: 0px" href="http://www.teamelysium.kr" target="_blank">Team Elysium Inc.</a> All Rights Reserved</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1>
+          <section class="login_content">
+            <form>
+              <h1>회원가입</h1>
+              <div class="form-group">
+                    <input type="text" id="doctor_name" name="doctor_name" tabindex="1" class="form-control" placeholder="이름">
                   </div>
                   <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="text-center">
-                          <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-                        </div>
-                      </div>
-                    </div>
+                    <input type="email" id="email_id" name="email_id" tabindex="1" class="form-control" placeholder="이메일">
                   </div>
-								</div>
-
-								<form id="register-form" style="display: none;" action="./php/doctor_register.php" method="post">
-									<div class="form-group">
-										<input type="text" id="doctor_name" name="doctor_name" tabindex="1" class="form-control" placeholder="이름">
-									</div>
-									<div class="form-group">
-										<input type="email" id="email_id" name="email_id" tabindex="1" class="form-control" placeholder="이메일">
-									</div>
-									<div class="form-group">
-										<input type="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
-									</div>
-									<div class="form-group">
-										<input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="비밀번호 확인">
-									</div>
                   <div class="form-group">
-										<input type="text" id="hospital_name" name="hospital_name" tabindex="2" class="form-control" placeholder="병원">
-									</div>
+                    <input type="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
+                  </div>
                   <div class="form-group">
-										<input type="text" id="doctor_phone" name="doctor_phone" tabindex="2" class="form-control" placeholder="핸드폰 번호">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-                        <div class="form-group">
-                          <button id="registerButton" class="btn btn-lg btn-primary btn-block">회원가입하기</button>
+                    <input type="password" id="confirm-password" tabindex="2" class="form-control" placeholder="비밀번호 확인">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="hospital_name" name="hospital_name" tabindex="2" class="form-control" placeholder="병원">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="doctor_phone" name="doctor_phone" tabindex="2" class="form-control" placeholder="핸드폰 번호">
+                  </div>
+              <div class="form-group col-md-12 col-xs-12">
+                          <button id="registerButton" class="btn btn-md btn-default text-center">회원가입</button>
                         </div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="doctor_form.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">이미 회원이십니까?
+                  <b><a href="#signin" class="to_register"> 로그인 </a></b>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>   
+                  <p>©2017 <a style="margin-right: 0px" href="http://www.teamelysium.kr" target="_blank">Team Elysium Inc.</a> All Rights Reserved</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
