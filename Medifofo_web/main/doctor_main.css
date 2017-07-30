@@ -1,0 +1,41 @@
+body {
+  background-color: white;
+  font-size : 15px;
+}
+
+.container{
+  background-color: #F9F9F9;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+.panel_toolbox>li{
+  float: right;
+}
+
+#patient_table_thead_name{
+  width: 180px;
+}
+
+#patient_table_thead_country{
+  width: 130px;
+}
+
+#patient_table_thead_gender{
+  width: 60px;
+}
+
+#patient_table_thead_age{
+  width: 60px;
+}
+
+#patient_table_thead_information{
+  width: 180px;
+}
