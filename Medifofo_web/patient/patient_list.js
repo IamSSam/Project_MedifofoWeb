@@ -21,6 +21,14 @@ $(function() {
 
 
   var table = $('#datatable-buttons2').DataTable( {
+    "language": {
+           "lengthMenu": "Display _MENU_ records per page",
+           "zeroRecords": "검색 정보가 없습니다.",
+           "info": "Showing page _PAGE_ of _PAGES_, Number of patient: _MAX_",
+           "infoEmpty": "사용 가능 기록 없음",
+           "infoFiltered": "(filtered from _MAX_ total records)"
+    },
+
     searching: true,
     paging: true,
     dom: "Bfrtip",
@@ -30,15 +38,11 @@ $(function() {
       className: "btn-sm"
     },
     {
-      extend: "csv",
-      className: "btn-sm"
-    },
-    {
       extend: "excel",
       className: "btn-sm"
     },
     {
-      extend: "pdfHtml5",
+      extend: "pdf",
       className: "btn-sm"
     },
     {
@@ -46,13 +50,7 @@ $(function() {
       className: "btn-sm"
     },
     ],
-    "language": {
-            "lengthMenu": "Display _MENU_ records per page",
-            "zeroRecords": "Nothing found - sorry",
-            "info": "Showing page _PAGE_ of _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-        }
+
   } );
 
   var counter = "";
