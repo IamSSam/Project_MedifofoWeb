@@ -4,7 +4,7 @@ body {
 }
 
 .container{
-  background-color: #F9F9F9;
+  background-color: white;
   margin-bottom: 10px;
 }
 
@@ -16,26 +16,11 @@ a {
   color: black;
 }
 
+a:focus, a:hover{
+  color: #00d2a5;
+}
+
 .panel_toolbox>li{
   float: right;
 }
 
-#patient_table_thead_name{
-  width: 180px;
-}
-
-#patient_table_thead_country{
-  width: 130px;
-}
-
-#patient_table_thead_gender{
-  width: 60px;
-}
-
-#patient_table_thead_age{
-  width: 60px;
-}
-
-#patient_table_thead_information{
-  width: 180px;
-}

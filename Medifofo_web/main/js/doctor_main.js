@@ -3,7 +3,7 @@ $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('.navbar-header');
    var offset = startchange.offset();
-   $('#navdiv').css('background-color', '#e6ffff');
+   $('#navdiv').css('background-color', 'white');
    $(document).scroll(function() {
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) { // 스크롤 내려갔을 때
@@ -12,12 +12,13 @@ $(document).ready(function(){
           $('.navbar-header').css('background-color', '#f3f1f1');
           $('.navbar-header').css('color', '#00d2a5');
        } else {
-          $('#navdiv').css('background-color', '#e6ffff');
+          $('#navdiv').css('background-color', 'white');
           $('#plist').css('color','black');
           $('.navbar-header').css('background-color', '#00d2a5');
           $('.navbar-header').css('color', '#fff');
        }
    });
+
 });
 
 $(function() {
@@ -28,9 +29,7 @@ $(function() {
       var user = firebase.auth().currentUser;
       var user_picture = "http://graph.facebook.com/" + user.providerData[0].uid +"/picture?type=small";
       var user_name = user.displayName;
-      document.getElementById('user-image').src = user_picture;
       document.getElementById('user-name').innerHTML = user_name;
-      document.getElementById('nav-user-image').src = user_picture;
       document.getElementById('nav-user-name').innerHTML = user_name;
       console.log(user_picture);
       //var user_picture = user.uid;
