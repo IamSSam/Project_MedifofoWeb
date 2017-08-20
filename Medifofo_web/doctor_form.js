@@ -1,8 +1,5 @@
 $(function() {
 
-  moveLoginTab();
-  moveRegisterTab();
-
   firebase.auth().onAuthStateChanged(user => {
     if(user) {
       console.log(user);
@@ -15,12 +12,6 @@ $(function() {
 
       var user = firebase.auth().currentUser;
       var user_picture = "http://graph.facebook.com/" + user.providerData[0].uid +"/picture?type=large";
-
-      if(typeof user_picture === 'undefined' || !user_picture){
-        document.getElementById('user-image').src = user_picture;
-      }else{
-        document.getElementById('user-image').src = "./main/images/user.png";
-      }
 
       if(user){
         // TODO: Move to Main page
@@ -37,28 +28,6 @@ $(function() {
   });
 
 });
-
-function moveLoginTab(){
-  $('#login-form-link').click(function(e) {
-    $("#login-form").delay(100).fadeIn(100);
-    $("#facebook-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-}
-
-function moveRegisterTab(){
-  $('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
-    $("#facebook-form").fadeOut(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-}
 
 $("#registerButton").on('click', event => {
     event.preventDefault();
@@ -84,9 +53,11 @@ $("#registerButton").on('click', event => {
     if (!email || email.length < 4) {
       alert('email을 입력해주세요.');
       txtEmail.focus();
+      return;
     }else if (!password || password.length < 8) {
       alert('비밀번호를 입력해주세요.');
       txtPassword.focus();
+      return;
     }else{
       event.preventDefault();
     }
@@ -132,7 +103,8 @@ $("#registerButton").on('click', event => {
 
 });
 
-$("#login-form").on('submit', event => {
+$("#login-form").on('click', event => {
+  console.log("asdf");
     event.preventDefault();
 
     const txtEmail = document.getElementById('user_email');
@@ -184,55 +156,54 @@ $("#login-form").on('submit', event => {
   });
 });
 
-$(document).ready(function(){
-  $("#facebookButton").click(function(){
-    var provider = new firebase.auth.FacebookAuthProvider();
-    platform = 2;
-    provider.addScope('email');
-    provider.addScope('user_birthday');
-    provider.setCustomParameters({
-      'display': 'popup'
-    });
 
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
-      console.log("TOKEN: "+ token);
-      // The signed-in user info.
-      var user = result.user; // S로 출력
-
-      // TODO: Move to MainPage
-      //window.location = './main/doctor_main.html';
-
-      $.ajax({
-        url: 'http://igrus.mireene.com/medifofo_web/php/doctor_register.php',
-        type: 'post',
-        dataType: 'text',
-        data: {
-          token_id : token,
-          platform : 2,
-          doctor_name : user.displayName,
-          doctor_phone : $('#doctor_phone').val(),
-          hospital_name : $('#hospital_name').val(),
-        },
-        success: function(data){
-          console.log(data);
-        }
-      });
-
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
-
-
+$("#facebookButton").on('click', event => {
+  var provider = new firebase.auth.FacebookAuthProvider();
+  platform = 2;
+  provider.addScope('email');
+  provider.addScope('user_birthday');
+  provider.setCustomParameters({
+    'display': 'popup'
   });
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    console.log("TOKEN: "+ token);
+    // The signed-in user info.
+    var user = result.user; // S로 출력
+
+    // TODO: Move to MainPage
+    //window.location = './main/doctor_main.html';
+
+    $.ajax({
+      url: 'http://igrus.mireene.com/medifofo_web/php/doctor_register.php',
+      type: 'post',
+      dataType: 'text',
+      data: {
+        token_id : token,
+        platform : 2,
+        doctor_name : user.displayName,
+        doctor_phone : $('#doctor_phone').val(),
+        hospital_name : $('#hospital_name').val(),
+      },
+      success: function(data){
+        console.log(data);
+      }
+    });
+
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+    console.log(errorCode);
+    console.log(errorMessage);
+  });
+
+
 });

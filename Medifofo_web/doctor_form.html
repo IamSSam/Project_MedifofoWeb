@@ -44,26 +44,28 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
-        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1>
+        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo2.png" alt="Moonlight" width="250px"></a></h1>
           <section class="login_content">
             <form>
               <h1>로그인</h1>
               <div>
-                <input type="text" class="form-control" placeholder="이메일" required="" />
+                <input id="user_email" type="text" class="form-control" placeholder="이메일" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="비밀번호" required="" />
+                <input id="user_password" type="password" class="form-control" placeholder="비밀번호"  />
               </div>
+            </form>
               <div>
                 <div class="row">
                   <div class="col-sm-6 col-xs-6">
-                        <input id="loginButton" type="button" class="btn btn-md btn-default btn-block" value="로그인">
-                        </div>
-                        <div class="col-sm-6 col-xs-6">
-                        <button id="facebookButton" class="btn btn-md btn-primary btn-block">
-                            페이스북 로그인
-                        </button>
-                        </div>
+                    <!--
+                    <input id="login-form" type="submit" class="btn btn-md btn-default btn-block" value="로그인" style="margin-left: 0px">
+                    -->
+                    <button id="login-form" class="btn btn-md btn-default btn-block">로그인</button>
+                  </div>
+                  <div class="col-sm-6 col-xs-6">
+                    <button id="facebookButton" class="btn btn-md btn-primary btn-block">페이스북 로그인</button>
+                  </div>
                 </div>
               <div class="row text-center" style="margin-top: 15px">
                 <b><a class="reset_pass" style="margin-left: 40px" href="#">비밀번호 찾기</a></b>
@@ -81,15 +83,15 @@
 
                 <div class="row">
                   <!-- <h1 id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1> -->
-                  <p>©2017 <a style="margin-right: 0px" href="http://www.teamelysium.kr" target="_blank">Team Elysium Inc.</a> All Rights Reserved</p>
+                  <p>©2017 <a style="margin-right: 0px" href="" target="_blank">Moonlight Inc.</a> All Rights Reserved</p>
                 </div>
               </div>
-            </form>
+
           </section>
         </div>
 
         <div id="register" class="animate form registration_form">
-        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo.png" alt="Team Elysium Logo" width="250px"></a></h1>
+        <h1 class="text-center" style="margin-right: 5px" id="fh5co-logo"><a href="#"><img src="images/logo2.png" alt="Moonlight" width="250px"></a></h1>
           <section class="login_content">
             <form>
               <h1>회원가입</h1>
@@ -112,8 +114,8 @@
                     <input type="text" id="doctor_phone" name="doctor_phone" tabindex="2" class="form-control" placeholder="핸드폰 번호">
                   </div>
               <div class="form-group col-md-12 col-xs-12">
-                          <button id="registerButton" class="btn btn-md btn-default text-center">회원가입</button>
-                        </div>
+                <button id="registerButton" class="btn btn-md btn-default text-center">회원가입</button>
+              </div>
 
               <div class="clearfix"></div>
 
@@ -125,8 +127,8 @@
                 <div class="clearfix"></div>
                 <br />
 
-                <div>   
-                  <p>©2017 <a style="margin-right: 0px" href="http://www.teamelysium.kr" target="_blank">Team Elysium Inc.</a> All Rights Reserved</p>
+                <div>
+                  <p>©2017 <a style="margin-right: 0px" href="" target="_blank">Moonlight Inc.</a> All Rights Reserved</p>
                 </div>
               </div>
             </form>
@@ -134,5 +136,8 @@
         </div>
       </div>
     </div>
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="doctor_form.js"></script>
   </body>
 </html>
