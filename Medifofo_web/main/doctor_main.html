@@ -52,9 +52,12 @@
           <div class="row nav_menu">
             <nav class="navbar-header">
             <header class="navbar navbar-fixed-top" role="header" id="navbar">
-              <div id="navdiv" class="container">
+              <div id="navdiv">
                 <div class="col-md-4 col-xs-4">
-                  <h1 id="fh5co-logo" class="pull-left" style="margin: 5px 0px 0px 5px; display: inline-block;"><a href="#"><img src="../images/logo2.png" alt="Moon Light" width="150px"></a></h1>
+                  <!--
+                  <h1 id="fh5co-logo" class="pull-left" style="margin: 5px 0px 0px 5px; display: inline-block;"><a href="#"><img src="../images/logo2.png" alt="MediFoFo" width="150px"></a></h1>
+                  -->
+                  <h1 id="fh5co-logo" class="pull-left" style="margin: 13px 5px 5px 5px; display: inline-block;">MediFoFo</h1>
                 </div>
                 <div class="col-md-4 col-xs-4">
                       <h3 id="plist" class="text-center" style="margin-top:20px; color: #00d2a5"></h3>
@@ -80,12 +83,12 @@
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="row" role="main">
+        <div class="row" role="main" id="main-content">
           <div class="">
             <div class="page-title">
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                <h3>환자 리스트 </h3>
+
                 </div>
               </div>
             </div>
@@ -103,7 +106,7 @@
                     <p class="text-muted font-13 m-b-30">
                       아래의 버튼을 클릭하면, 테이블의 내용을 파일 및 프린트로 제공합니다.
                     </p>
-                    <table id="datatable-buttons2" class="table table-striped table-bordered">
+                    <table id="datatable-buttons2" class="table-striped ui celled table">
                       <thead>
                         <tr>
                           <th id="patient_table_thead_name" style="width: 200px">이름</th>
@@ -183,6 +186,163 @@
         </div>
         <!-- /page content -->
 
+        <!-- patient info modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       <h4 class="modal-title text-center">Information</h4>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Name</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-name text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Age</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-birth text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Gender</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-gender text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Height</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-height text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Weight</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-weight text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Blood Type</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-abo text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Medicine list</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-medicine text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Allergy</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-allery text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">History</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-history text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Sleep time</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-sleeptime text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Daily stride</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-dailystride text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Symptom Answer</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-symptom text-center"></p>
+                     </div>
+                   </div>
+                   <div class="row modal-row">
+                     <div class="col-md-1 data-space">
+                         <p class="preface text-right"></p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title text-left">Comment</p>
+                     </div>
+                     <div class="col-md-5 data-space">
+                         <p class="p-title modal-comment text-center"></p>
+                     </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   </div>
+               </div>
+           </div>
+         </div>
         <!-- page content -->
         <div role="main">
           <div class="">
@@ -289,7 +449,7 @@
         <!-- footer content -->
         <footer class="row">
           <div class="text-center">
-            <p>©2017 <a style="margin-right: 0px" href="" target="_blank">Moonlight Inc.</a> All Rights Reserved</p>
+            <p>©2017 <a style="margin-right: 0px" href="" target="_blank">MediFoFo Inc.</a> All Rights Reserved</p>
           </div>
           <div class="clearfix"></div>
         </footer>

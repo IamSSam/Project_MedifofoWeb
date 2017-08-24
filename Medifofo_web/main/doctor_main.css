@@ -7,7 +7,13 @@ body {
   background-color: white;
   margin-bottom: 10px;
 }
-
+.navbar{
+  -webkit-transition:all .6s ease-out;
+  -moz-transition:all .6s ease-out;
+  -o-transition:all .6s ease-out;
+  -ms-transition:all .6s ease-out;
+  transition:all .6s ease-out;border-radius:0
+}
 h3 {
   color: black;
 }
@@ -24,3 +30,36 @@ a:focus, a:hover{
   float: right;
 }
 
+.modal-title{
+  font-size: 30px;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-bottom: 2.5px solid #00d2a5;
+}
+
+.preface{
+  width: 15px;
+  height: 15px;
+  margin: auto;
+  margin-top: 7px;
+  background-color: #00d2a5;
+}
+
+.data-space{
+  padding: 3px;
+}
+.p-title{
+  color: #000;
+  margin-top: 5px;
+}
+.modal-row{
+  margin-left: 70px;
+  margin-right: 70px;
+  border-bottom: 0.3px solid #ccc;
+}
+
+.modal-content {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+}
